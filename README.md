@@ -29,13 +29,17 @@ SyncDEV is an interactive web platform designed for students to align their univ
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Design Architecture
 
-* **Frontend**: HTML5, Vanilla CSS, JS ES6 (Single Page Application architecture)
-* **Libraries**: Tailwind CSS (Utility classes), GSAP (Animations), Lucide (Icons), Lenis (Smooth Scroll)
-* **Database & Auth**: Supabase PostgreSQL + Auth
+* **Frontend Layout**: HTML5, Vanilla CSS, JS ES6 (Single Page Application architecture). Built conforming to **design-taste-frontend** anti-slop guidelines to guarantee high-fidelity custom visual layouts without generic templates.
+* **Animation & Motion**: 
+  * **GSAP (GreenSock Animation Platform)** & **ScrollTrigger**: Powers the complex element entries, spotlight mouse-track overlays, interactive popups, and section transitions.
+  * **Lenis Smooth Scroll**: Provides buttery-smooth momentum scroll mechanics across the entire landing page viewport.
+  * **3D Tilt Engine**: Custom mouse-move matrix transformations mapping perspective tilts on elements (like the hero preview panel and credits card).
+* **Libraries & Assets**: Tailwind CSS (Utility layout blocks), Lucide (Dynamic icon injections).
+* **Database & Authentication**: Supabase PostgreSQL cloud instances with Row-Level Security (RLS) policies.
 * **Hosting**: Vercel
-* **Serverless Functions**: Vercel Serverless proxy for OpenRouter LLM requests
+* **Serverless Functions**: Vercel Serverless proxy API routing (`api/syncdev-ai.js`) managing OpenRouter LLM requests.
 
 ---
 
