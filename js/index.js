@@ -1061,7 +1061,10 @@ async function handleSignUp(e) {
   try {
     const { data, error } = await supabaseClient.auth.signUp({
       email, password: pass,
-      options: { data: { full_name: name } }
+      options: {
+        data: { full_name: name },
+        redirectTo: window.location.origin
+      }
     });
     if (error) throw error;
     if (data.user && !data.session) {
